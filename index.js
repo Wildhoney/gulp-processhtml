@@ -4,10 +4,11 @@ var through = require('through')
   , gutil = require('gulp-util')
   , PluginError = gutil.PluginError
   , File = gutil.File
+  , fs = require('fs')
   , transformer;
 
 
-transformer = {  
+transformer = {
   replace: function (content, section, line, asset) {
     return content.replace(line, section.indent + asset);
   },
@@ -31,12 +32,17 @@ transformer = {
   js: function (content, section, line) {
     return transformer.replace(content, section, line, '<script src="' + section.asset + '"></script>');
   },
-  
+
   remove: function (content, section, line) {
     var escaped = line.replace(/([.?*+\^=!:$\[\]\\(){}|\-])/g, '\\$1')
       , regReplace = new RegExp(escaped.replace(/^\s*|[\r\n]+\s*/g, '\\s*').replace(/\n{1}$/g, '\\n'));
     return content.replace(regReplace, '');
-  }  
+  },
+
+  include: function (content, section, line, asset) {
+    var file = fs.readFileSync(path.join(__dirname, section.asset), 'utf8');
+    return content.replace(line, section.indent + file.toString().trim());
+  }
 };
 
 function findSections(content, marker) {
@@ -52,7 +58,7 @@ function findSections(content, marker) {
     , buildStart
     , buildEnd
     , attr;
-  
+
   regStart = new RegExp('<!--\\s*' + marker + ':(\\[?[\\w-]+\\]?)(?::(\\w+))?(?:\\s*([^\\s]+)\\s*-->)*');
   regEnd = new RegExp('(?:<!--\\s*)*\\/' + marker + '\\s*-->');
   lines = content.replace(/\r\n/g, '\n').split(/\n/);
@@ -62,7 +68,7 @@ function findSections(content, marker) {
     line = lines[i];
     buildStart = line.match(regStart);
     buildEnd = regEnd.test(line);
-    
+
     if (buildStart) {
       inside = true;
       attr = buildStart[1].match(/(?:\[([\w-]+)\])*/)[1];
@@ -83,7 +89,7 @@ function findSections(content, marker) {
     if (inside && buildEnd) {
       inside = false;
       sections.push(section);
-    } 
+    }
   }
   return sections;
 }
@@ -123,7 +129,7 @@ module.exports = function(fileName, opt){
     if (!firstFile) {
       firstFile = file;
     }
-    
+
     contents = file.contents.toString('utf8');
     sections = findSections(contents, opt.marker);
 
@@ -145,7 +151,7 @@ module.exports = function(fileName, opt){
     if (buffer.length === 0) {
       return this.emit('end');
     }
-    
+
     joinedContents = buffer.join(opt.newLine);
     joinedPath = path.join(firstFile.base, fileName);
 
