@@ -48,7 +48,7 @@ describe('gulp-processhtml', function() {
         newFilePath.should.equal(expectedFilePath);
 
         newFile.relative.should.equal('processed.html');
-        
+
         Buffer.isBuffer(newFile.contents).should.equal(true);
         String(newFile.contents).should.equal([
             '<!doctype html>',
@@ -61,8 +61,8 @@ describe('gulp-processhtml', function() {
             '</body>',
             '</html>'
           ].join('\n'));
-        
-        
+
+
         done();
       });
       stream.write(fakeFile);
@@ -96,7 +96,7 @@ describe('gulp-processhtml', function() {
         should.exist(newFile.path);
         should.exist(newFile.relative);
         should.exist(newFile.contents);
-        
+
         Buffer.isBuffer(newFile.contents).should.equal(true);
         String(newFile.contents).should.equal([
             '<!doctype html>',
@@ -106,7 +106,7 @@ describe('gulp-processhtml', function() {
             '</body>',
             '</html>'
           ].join('\n'));
-        
+
         done();
       });
       stream.write(fakeFile);
@@ -140,7 +140,7 @@ describe('gulp-processhtml', function() {
         should.exist(newFile.path);
         should.exist(newFile.relative);
         should.exist(newFile.contents);
-        
+
         Buffer.isBuffer(newFile.contents).should.equal(true);
         String(newFile.contents).should.equal([
             '<!doctype html>',
@@ -151,7 +151,7 @@ describe('gulp-processhtml', function() {
             '</body>',
             '</html>'
           ].join('\n'));
-        
+
         done();
       });
       stream.write(fakeFile);
@@ -159,7 +159,57 @@ describe('gulp-processhtml', function() {
     });
 
 
+    it('should include files', function(done) {
+      var stream = processhtml('processed.html')
+        , fakeFile = new File({
+            cwd:  './',
+            base: './',
+            path: './file.html',
+            contents: new Buffer([
+              '<!doctype html>',
+              '<html>',
+              '<head>',
+              '  <style>',
+              '    <!-- build:include test/fixtures/styles.css -->',
+              '      <!-- Me thinks it should replace whatever is in between the build tags -->',
+              '      <div>FOO</div>',
+              '    <!-- /build -->',
+              '  </style>',
+              '</head>',
+              '<body>',
+              '</body>',
+              '</html>'
+            ].join('\n'))
+        });
 
+      stream.on('data', function (newFile) {
+        var newFilePath
+          , expectedFilePath;
+
+        should.exist(newFile);
+        should.exist(newFile.path);
+        should.exist(newFile.relative);
+        should.exist(newFile.contents);
+
+        Buffer.isBuffer(newFile.contents).should.equal(true);
+        String(newFile.contents).should.equal([
+            '<!doctype html>',
+            '<html>',
+            '<head>',
+            '  <style>',
+            '    body { background: teal; }',
+            '  </style>',
+            '</head>',
+            '<body>',
+            '</body>',
+            '</html>'
+          ].join('\n'));
+
+        done();
+      });
+      stream.write(fakeFile);
+      stream.end();
+    });
 
   });
 });
