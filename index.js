@@ -40,8 +40,19 @@ transformer = {
   },
 
   include: function (content, section, line, asset) {
-    var file = fs.readFileSync(path.join(__dirname, section.asset), 'utf8');
-    return content.replace(line, section.indent + file.toString().trim());
+    var file = fs.readFileSync(path.join(__dirname, section.asset), 'utf8')
+      , i
+      , l;
+
+    // return content.replace(line, section.indent + file.toString().trim());
+
+    l = line.length;
+    
+    while ((i = content.indexOf(line)) !== -1) {
+      content = content.substring(0, i) + 
+        section.indent + file.toString().trim() + content.substring(i + l);
+    }
+    return content;
   }
 };
 
@@ -100,6 +111,7 @@ module.exports = function(fileName, opt){
   var buffer = []
     , firstFile;
 
+
   if (!fileName) {
     throw new PluginError('gulp-processhtml',  'Missing fileName option for gulp-processhtml');
   }
@@ -107,7 +119,6 @@ module.exports = function(fileName, opt){
   opt = opt || {};
   opt.newLine = opt.newLine || gutil.linefeed;
   opt.marker = opt.marker || 'build';
-
 
   function processContents(file) {
     var contents

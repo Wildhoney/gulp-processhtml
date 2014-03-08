@@ -1,37 +1,27 @@
 {
   "name": "gulp-processhtml",
-
-  "version": "0.0.2",
-  
-  "description": "Process html files at build time to modify them depending on the release environment",
-  
+  "version": "0.0.3",
+  "description": "Process html files at build time to modify them as you wish",
   "repository": {
     "type": "git",
     "url": "git://github.com/julien/gulp-processhtml.git"
   },
-  
   "main": "index.js",
-  
   "scripts": {
     "prepublish": "npm prune",
     "test": "mocha"
   },
-
   "keywords": [
     "gulpplugin"
   ],
-
   "dependencies": {
     "through": "*",
     "gulp-util": "*"
   },
-
   "devDependencies": {
     "mocha": "*",
     "should": "*"
   },
-
   "author": "Julien Castelain <jcastelain@gmail.com> (http://www.punkscum.org)",
-  
   "license": "MIT"
 }
