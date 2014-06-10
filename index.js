@@ -72,7 +72,7 @@ function findSections(content, marker) {
 
   regStart = new RegExp('<!--\\s*' + marker + ':(\\[?[\\w-]+\\]?)(?::(\\w+))?(?:\\s*([^\\s]+)\\s*-->)*');
   regEnd = new RegExp('(?:<!--\\s*)*\\/' + marker + '\\s*-->');
-  lines = content.replace(/\r\n/g, '\n').split(/\n/);
+  lines = content.split(/\n/);
   l = lines.length;
 
   for (i = 0; i < l; i += 1) {
@@ -141,7 +141,7 @@ module.exports = function(fileName, opt){
       firstFile = file;
     }
 
-    contents = file.contents.toString('utf8');
+    contents = file.contents.toString('utf8').replace(/\r\n/g, '\n');
     sections = findSections(contents, opt.marker);
 
     l = sections.length;
