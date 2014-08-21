@@ -16,7 +16,7 @@ transformer = {
   attr: function (content, section, line, lineContent) {
     var reg, replaced;
     // only run attr replacer for the block content
-    reg = new RegExp('(\\s*(?:' + section.attr + ')=[\'"])(.*)?(".*)', 'gi');
+    reg = new RegExp('(\\s*(?:' + section.attr + ')=[\'"])(.*?)(".*)', 'gi');
     replaced = lineContent.replace(reg, function (wholeMatch, start, asset, end) {
       // check if only the path was provided to leave the original asset name intact
       asset = (!path.extname(section.asset) && /\//.test(section.asset))? section.asset + path.basename(asset) : section.asset;
@@ -47,9 +47,9 @@ transformer = {
     // return content.replace(line, section.indent + file.toString().trim());
 
     l = line.length;
-    
+
     while ((i = content.indexOf(line)) !== -1) {
-      content = content.substring(0, i) + 
+      content = content.substring(0, i) +
         section.indent + file.toString().trim() + content.substring(i + l);
     }
     return content;
