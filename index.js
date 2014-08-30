@@ -40,11 +40,9 @@ transformer = {
   },
 
   include: function (content, section, line, asset) {
-    var file = fs.readFileSync(path.join(__dirname, section.asset), 'utf8')
+    var file = fs.readFileSync(path.join(process.cwd(), section.asset), 'utf8')
       , i
       , l;
-
-    // return content.replace(line, section.indent + file.toString().trim());
 
     l = line.length;
 

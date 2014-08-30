@@ -69,7 +69,7 @@ describe('gulp-processhtml', function() {
       stream.end();
     });
 
-    
+
 
     it('should handle carriage returns', function(done) {
       var stream = processhtml('processed.html')
@@ -237,6 +237,8 @@ describe('gulp-processhtml', function() {
               '  </style>',
               '</head>',
               '<body>',
+              '<!-- build:include test/fixtures/title.html --><!-- /build -->',
+              '<!-- build:include test/fixtures/section.html --><!-- /build -->',
               '</body>',
               '</html>'
             ].join('\n'))
@@ -261,6 +263,10 @@ describe('gulp-processhtml', function() {
             '  </style>',
             '</head>',
             '<body>',
+            '<h1 class="title">This is a title</h1>',
+            '<section>',
+            '  <p>This is a section</p>',
+            '</section>',
             '</body>',
             '</html>'
           ].join('\n'));
