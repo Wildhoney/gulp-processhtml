@@ -117,6 +117,7 @@ module.exports = function(fileName, opt){
   opt = opt || {};
   opt.newLine = opt.newLine || gutil.linefeed;
   opt.marker = opt.marker || 'build';
+  opt.environment = opt.environment || '';
 
   function processContents(file) {
     var contents
@@ -147,7 +148,9 @@ module.exports = function(fileName, opt){
       section = sections[i];
       line = section.raw.join(opt.newLine);
       content = section.raw.slice(1, -1).join(opt.newLine);
-      contents = transformer[section.type](contents, section, line, content);
+      if (section.target == opt.environment || !section.target) {
+        contents = transformer[section.type](contents, section, line, content);
+      }
     }
     buffer.push(contents);
   }
