@@ -1,6 +1,6 @@
 {
   "name": "gulp-processhtml",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Process html files at build time to modify them as you wish",
   "repository": {
     "type": "git",
@@ -27,5 +27,25 @@
     "mocha": "latest"
   },
   "author": "Julien Castelain <jcastelain@gmail.com> (http://www.punkscum.org)",
+  "contributors": [
+    {
+      "name":  "Julien Castelain"
+    },
+    {
+      "name": "Guille"
+    },
+    {
+      "name": "James Kleeh"
+    },
+    {
+      "name": "Chris Antaki"
+    },
+    {
+      "name": "kristoferjoseph"
+    },
+    {
+      "name": "Fabien Demangeat"
+    }
+  ],
   "license": "MIT"
 }
