@@ -10,8 +10,7 @@ var assert = require('assert')
 
 require('mocha');
 
-
-function process(input, options, output, done) {
+function process(input, output, done, options) {
   options = options || {};
   gulp
     .src(input)
@@ -30,19 +29,19 @@ function process(input, options, output, done) {
 describe('gulp-processhtml', function () {
 
   it('should process html comments', function (done) {
-    process('test/fixtures/basic.html', null, 'test/expected/basic.html', done);
+    process('test/fixtures/basic.html', 'test/expected/basic.html', done);
   });
 
   it('should remove content', function (done) {
-    process('test/fixtures/remove.html', null, 'test/expected/remove.html', done);
+    process('test/fixtures/remove.html', 'test/expected/remove.html', done);
   });
 
   it('should transform attributes', function (done) {
-    process('test/fixtures/attributes.html', null, 'test/expected/attributes.html', done);
+    process('test/fixtures/attributes.html', 'test/expected/attributes.html', done);
   });
 
   it('should include files', function (done) {
-    process('test/fixtures/include.html', null, 'test/expected/include.html', done);
+    process('test/fixtures/include.html', 'test/expected/include.html', done);
   });
 
 });
