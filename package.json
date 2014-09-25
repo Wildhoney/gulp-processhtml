@@ -1,6 +1,6 @@
 {
   "name": "gulp-processhtml",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "description": "Process html files at build time to modify them as you wish",
   "repository": {
     "type": "git",
@@ -12,15 +12,19 @@
     "test": "mocha"
   },
   "keywords": [
-    "gulpplugin"
+    "gulpplugin",
+    "htmlprocessor",
+    "process",
+    "html"
   ],
   "dependencies": {
-    "through": "*",
-    "gulp-util": "*"
+    "gulp-util": "latest",
+    "htmlprocessor": "latest",
+    "through2": "latest"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*"
+    "gulp": "latest",
+    "mocha": "latest"
   },
   "author": "Julien Castelain <jcastelain@gmail.com> (http://www.punkscum.org)",
   "license": "MIT"
