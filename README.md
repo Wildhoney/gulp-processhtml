@@ -69,9 +69,7 @@ To this:
 
 [Denis Ciccale](https://twitter.com/tdecs)
 
-###Note
 
-Since I don't usually use [Gulp](http://gulpjs.com) and prefer [G.N.U. Make](http://www.gnu.org/software/make),
-feel free to ask me to transfer this repo to your GitHub account if you want to maintain it.
+**Feel free to ask me to transfer this repo to your GitHub account if you want to maintain it.**
 
 
