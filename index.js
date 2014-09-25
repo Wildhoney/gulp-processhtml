@@ -3,7 +3,7 @@ var through = require('through2')
   , HTMLProcessor = require('htmlprocessor')
   , PluginError = gutil.PluginError;
 
-module.exports = function(fileName, options) {
+module.exports = function(options) {
 
   var processor = new HTMLProcessor(options);
 
