@@ -41,7 +41,10 @@ describe('gulp-processhtml', function () {
   });
 
   it('should include files', function (done) {
-    process('test/fixtures/include.html', 'test/expected/include.html', done);
+    process('test/fixtures/include1.html', 'test/expected/include1.html', done);
   });
 
+  it('should include files outside current folder', function (done) {
+    process('test/fixtures/include2.html', 'test/expected/include2.html', done);
+  });
 });
