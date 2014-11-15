@@ -34,19 +34,19 @@ Using this plugin, you can transform this:
 <!DOCTYPE html>
 <html>
 <head>
-  <!--build:css style.min.css -->
+  <!-- build:css style.min.css -->
   <link rel="stylesheet" href="css/style.css">
-  <!--/build-->
+  <!-- /build -->
 </head>
 <body>
 
-  <!--build:js app.min.js-->
+  <!-- build:js app.min.js-->
   <script src="app.js"></script>
-  <!--/build -->
+  <!-- /build -->
 
-  <!--build:remove-->
+  <!-- build:remove-->
   <script src="http://192.168.0.1:35729/livereload.js?snipver=1"></script>
-  <!--/build-->
+  <!-- /build-->
 </body>
 </html>
 ```
