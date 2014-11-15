@@ -11,7 +11,7 @@ to process/transform html files.
 
 ###Use it in your gulpfile
 
-```
+```js
 var gulp = require('gulp')
   , processhtml = require('gulp-processhtml')
   , opts = { /* plugin options */ };
@@ -30,7 +30,7 @@ for a different environment.
 
 Using this plugin, you can transform this:
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +53,7 @@ Using this plugin, you can transform this:
 
 To this:
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
