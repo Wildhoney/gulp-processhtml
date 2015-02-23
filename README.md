@@ -40,13 +40,13 @@ Using this plugin, you can transform this:
 </head>
 <body>
 
-  <!-- build:js app.min.js-->
+  <!-- build:js app.min.js -->
   <script src="app.js"></script>
   <!-- /build -->
 
-  <!-- build:remove-->
+  <!-- build:remove -->
   <script src="http://192.168.0.1:35729/livereload.js?snipver=1"></script>
-  <!-- /build-->
+  <!-- /build -->
 </body>
 </html>
 ```
