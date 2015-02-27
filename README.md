@@ -1,15 +1,15 @@
-#gulp-processhtml
+# gulp-processhtml
 
 This gulp-plugin uses Denis Ciccale's [node-htmlprocessor](https://github.com/dciccale/node-htmlprocessor),
 to process/transform html files.
 
-###Install the dependencies:
+## Install the dependencies:
 
 `npm install -g gulp`
 
 `npm install gulp-processhtml`
 
-###Use it in your gulpfile
+## Gulpfile
 
 ```js
 var gulp = require('gulp')
@@ -23,7 +23,7 @@ gulp.task('default', function () {
 });
 ```
 
-###Example usage
+## Example Usage
 
 You might need to change some attributes in your html, when you're releasing
 for a different environment.
@@ -65,11 +65,6 @@ To this:
 </html>
 ```
 
-###Credits
+## Credits
 
 [Denis Ciccale](https://twitter.com/tdecs)
-
-
-**Feel free to ask me to transfer this repo to your GitHub account if you want to maintain it.**
-
-
