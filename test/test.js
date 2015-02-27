@@ -34,7 +34,7 @@ describe('gulp-processhtml', function () {
     });
 
     it('should replace content', function (done) {
-        process('test/fixtures/template.html', 'test/expected/template.html', done);
+        process('test/fixtures/replace.html', 'test/expected/replace.html', done);
     });
 
     it('should transform attributes', function (done) {
