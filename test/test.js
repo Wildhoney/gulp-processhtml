@@ -33,6 +33,10 @@ describe('gulp-processhtml', function () {
         process('test/fixtures/remove.html', 'test/expected/remove.html', done);
     });
 
+    it('should replace content', function (done) {
+        process('test/fixtures/template.html', 'test/expected/template.html', done);
+    });
+
     it('should transform attributes', function (done) {
         process('test/fixtures/attributes.html', 'test/expected/attributes.html', done);
     });
