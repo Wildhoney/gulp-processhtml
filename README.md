@@ -3,7 +3,13 @@
 Gulp plugin uses Denis Ciccale's [node-htmlprocessor](https://github.com/dciccale/node-htmlprocessor)
 to process/transform html files.
 
-* `npm install gulp-processhtml --save-dev`
+![Travis](http://img.shields.io/travis/Wildhoney/gulp-processhtml.svg?style=flat)
+&nbsp;
+![npm](http://img.shields.io/npm/v/gulp-processhtml.svg?style=flat)
+&nbsp;
+![License MIT](http://img.shields.io/badge/License-MIT-lightgrey.svg?style=flat)
+
+* **npm:** `npm install gulp-processhtml --save-dev`
 
 ## Gulpfile
 

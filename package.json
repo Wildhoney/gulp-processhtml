@@ -25,18 +25,33 @@
     "through2": "latest"
   },
   "devDependencies": {
-    "gulp": "latest",
+    "gulp": "^3.8.11",
+    "gulp-mocha": "^2.0.0",
     "mocha": "latest"
   },
   "author": "Julien Castelain <jcastelain@gmail.com> (http://www.punkscum.org)",
   "contributors": [
-    { "name": "Julien Castelain" },
-    { "name": "Guille" },
-    { "name": "James Kleeh" },
-    { "name": "Chris Antaki" },
-    { "name": "kristoferjoseph" },
-    { "name": "Fabien Demangeat" },
-    { "name": "Adam Timberlake" }
+    {
+      "name": "Julien Castelain"
+    },
+    {
+      "name": "Guille"
+    },
+    {
+      "name": "James Kleeh"
+    },
+    {
+      "name": "Chris Antaki"
+    },
+    {
+      "name": "kristoferjoseph"
+    },
+    {
+      "name": "Fabien Demangeat"
+    },
+    {
+      "name": "Adam Timberlake"
+    }
   ],
   "license": "MIT"
 }
