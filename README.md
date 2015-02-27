@@ -8,14 +8,14 @@ to process/transform html files.
 ## Gulpfile
 
 ```js
-var gulp = require('gulp')
-  , processhtml = require('gulp-processhtml')
-  , opts = { /* plugin options */ };
+var gulp = require('gulp'),
+    processhtml = require('gulp-processhtml')
+    opts = { /* plugin options */ };
 
 gulp.task('default', function () {
-  gulp.src('./*.html')
-    .pipe(processhtml(opts))
-    .pipe(gulp.dest('dist'));
+    return gulp.src('./*.html')
+               .pipe(processhtml(opts))
+               .pipe(gulp.dest('dist'));
 });
 ```
 
