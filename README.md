@@ -49,6 +49,10 @@ Using this plugin, you can transform this:
   <!-- build:remove -->
   <script src="http://192.168.0.1:35729/livereload.js?snipver=1"></script>
   <!-- /build -->
+
+  <!-- build:replace 'Goodbye Livereload...' -->
+  <script src="http://192.168.0.1:35729/livereload.js?snipver=1"></script>
+  <!-- /build -->
 </body>
 </html>
 ```
