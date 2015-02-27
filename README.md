@@ -1,13 +1,9 @@
 # gulp-processhtml
 
-This gulp-plugin uses Denis Ciccale's [node-htmlprocessor](https://github.com/dciccale/node-htmlprocessor),
+Gulp plugin uses Denis Ciccale's [node-htmlprocessor](https://github.com/dciccale/node-htmlprocessor)
 to process/transform html files.
 
-## Install the dependencies:
-
-`npm install -g gulp`
-
-`npm install gulp-processhtml`
+* `npm install gulp-processhtml --save-dev`
 
 ## Gulpfile
 

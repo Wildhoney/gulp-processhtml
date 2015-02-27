@@ -8,6 +8,7 @@ module.exports = function(options) {
   var processor = new HTMLProcessor(options);
 
   function processContent(file, enc, cb) {
+
     var content;
 
     if (file.isStream()) {
@@ -27,7 +28,8 @@ module.exports = function(options) {
 
     this.push(file);
     cb();
-  };
+
+  }
 
   return through.obj(processContent);
 };
