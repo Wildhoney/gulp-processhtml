@@ -53,6 +53,7 @@ Using this plugin, you can transform this:
   <!-- build:replace 'Goodbye Livereload...' -->
   <script src="http://192.168.0.1:35729/livereload.js?snipver=1"></script>
   <!-- /build -->
+
 </body>
 </html>
 ```
@@ -67,6 +68,7 @@ To this:
 </head>
 <body>
   <script src="app.min.js"></script>
+  Goodbye Livereload...
 </body>
 </html>
 ```
