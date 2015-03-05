@@ -1,6 +1,6 @@
 {
   "name": "gulp-processhtml",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Process html files at build time to modify them as you wish",
   "repository": {
     "type": "git",
@@ -28,7 +28,9 @@
     "gulp": "^3.8.11",
     "gulp-cssmin": "^0.1.6",
     "gulp-mocha": "^2.0.0",
-    "mocha": "latest"
+    "mocha": "latest",
+    "request": "^2.53.0",
+    "xpath": "0.0.9"
   },
   "author": "Julien Castelain <jcastelain@gmail.com> (http://www.punkscum.org)",
   "contributors": [

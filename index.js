@@ -5,6 +5,10 @@ var through       = require('through2'),
 
 module.exports = function(options) {
 
+    if (!options) {
+        options = {};
+    }
+
     if (!options.customBlockTypes) {
         options.customBlockTypes = [];
     }
