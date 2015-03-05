@@ -1,20 +1,19 @@
 var through       = require('through2'),
     gutil         = require('gulp-util'),
+    path          = require('path'),
     HTMLProcessor = require('htmlprocessor'),
     PluginError   = gutil.PluginError;
 
 module.exports = function(options) {
 
-    //if (!options) {
-    //    options = {};
-    //}
-    //
-    //if (!options.customBlockTypes) {
-    //    options.customBlockTypes = [];
-    //}
+    options = options || {};
+
+    if (!options.customBlockTypes) {
+        options.customBlockTypes = [];
+    }
 
     // Add some custom block types.
-    //options.customBlockTypes.push('./custom/replace.js');
+    options.customBlockTypes.push(path.join(__dirname, 'custom/replace.js'));
 
     var processor = new HTMLProcessor(options),
         content   = '';
