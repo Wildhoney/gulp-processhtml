@@ -5,16 +5,16 @@ var through       = require('through2'),
 
 module.exports = function(options) {
 
-    if (!options) {
-        options = {};
-    }
-
-    if (!options.customBlockTypes) {
-        options.customBlockTypes = [];
-    }
+    //if (!options) {
+    //    options = {};
+    //}
+    //
+    //if (!options.customBlockTypes) {
+    //    options.customBlockTypes = [];
+    //}
 
     // Add some custom block types.
-    options.customBlockTypes.push('./custom/replace.js');
+    //options.customBlockTypes.push('./custom/replace.js');
 
     var processor = new HTMLProcessor(options),
         content   = '';
