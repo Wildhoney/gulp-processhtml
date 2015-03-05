@@ -1,6 +1,6 @@
 {
   "name": "gulp-processhtml",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "Process html files at build time to modify them as you wish",
   "repository": {
     "type": "git",
