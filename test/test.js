@@ -49,4 +49,8 @@ describe('gulp-processhtml', function () {
         process('test/fixtures/include2.html', 'test/expected/include2.html', done);
     });
 
+    it('should parse the example from the readme.md', function (done) {
+        process('test/fixtures/readme.html', 'test/expected/readme.html', done);
+    });
+
 });
