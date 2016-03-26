@@ -75,4 +75,4 @@ To this:
 
 ## Credits
 
-[Denis Ciccale](https://twitter.com/tdecs)
+[Denis Ciccale](https://twitter.com/dciccale)
