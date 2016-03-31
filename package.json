@@ -31,7 +31,7 @@
     "gulp-mocha": "^2.0.0",
     "mocha": "latest",
     "request": "^2.53.0",
-    "xpath": "0.0.9"
+    "xpath": "0.0.22"
   },
   "author": "Julien Castelain <jcastelain@gmail.com> (http://www.punkscum.org)",
   "contributors": [
