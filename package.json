@@ -20,8 +20,8 @@
     "html processor"
   ],
   "dependencies": {
-    "gulp-util": "latest",
     "htmlprocessor": "latest",
+    "plugin-error": "~0.1.2",
     "through2": "latest"
   },
   "devDependencies": {

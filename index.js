@@ -1,8 +1,7 @@
 var through       = require('through2'),
-    gutil         = require('gulp-util'),
+    PluginError   = require('plugin-error'),
     path          = require('path'),
-    HTMLProcessor = require('htmlprocessor'),
-    PluginError   = gutil.PluginError;
+    HTMLProcessor = require('htmlprocessor');
 
 module.exports = function(options) {
 
