@@ -28,7 +28,7 @@
     "gulp": "^3.8.11",
     "gulp-concat": "^2.5.2",
     "gulp-cssmin": "^0.1.6",
-    "gulp-mocha": "^2.0.0",
+    "gulp-mocha": "^8.0.0",
     "mocha": "latest",
     "request": "^2.53.0",
     "xpath": "0.0.22"
